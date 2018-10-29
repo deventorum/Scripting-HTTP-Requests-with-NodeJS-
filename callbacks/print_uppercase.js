@@ -11,8 +11,9 @@ let dataBuffer = '';
 const getHTML = require('./http-functions');
 
 
-function printHTML (html) {
+function printHTMLUpperCase (html) {
+	html = html.toUpperCase();
 	console.log(html);
 }
 
-getHTML(url, printHTML);
+getHTML(url, printHTMLUpperCase);

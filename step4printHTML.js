@@ -17,6 +17,7 @@ function getHTML (options, callback) {
 	https.get(options, function(response) {
 		response.setEncoding('utf-8');
 		response.on('data', function(data) {
+			data = data.split('');
 			dataBuffer += data;
 		});
 		response.on('end', function() {

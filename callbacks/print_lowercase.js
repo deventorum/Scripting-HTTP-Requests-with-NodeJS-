@@ -11,8 +11,9 @@ let dataBuffer = '';
 const getHTML = require('./http-functions');
 
 
-function printHTML (html) {
+function printHTMLLowerCase (html) {
+	html = html.toLowerCase();
 	console.log(html);
 }
 
-getHTML(url, printHTML);
+getHTML(url, printHTMLLowerCase);

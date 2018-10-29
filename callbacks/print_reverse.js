@@ -11,8 +11,9 @@ let dataBuffer = '';
 const getHTML = require('./http-functions');
 
 
-function printHTML (html) {
+function printHTMLReverse (html) {
+	html = html.split('').reverse().join('');
 	console.log(html);
 }
 
-getHTML(url, printHTML);
+getHTML(url, printHTMLReverse);
