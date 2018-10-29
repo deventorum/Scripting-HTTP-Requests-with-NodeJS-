@@ -1,7 +1,7 @@
 const userInput = process.argv.slice(2)[0];
 const requestOptions = {
 	host: 'sytantris.github.io',
-	path: '/http-examples/step2.html'
+	path: '/http-examples/step6/lowercase.html'
 };
 let url = '';
 
