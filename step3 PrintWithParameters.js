@@ -1,19 +1,18 @@
-const userInput = process.argv.slice(2);
+const userInput = process.argv.slice(2)[0];
 const https = require('https');
 
 
 function getAndPrintHTML () {
-	let theHost = '';
-	let thePath = '';
-	userInput[0] == undefined ? theHost = 'sytantris.github.io' : theHost = userInput[0]; 
-	userInput[1] == undefined ? thePath = '/http-examples/step2.html' : thePath = userInput[1]; 
+	let url = '';
 	const requestOptions = {
-		host: theHost,
-		path: thePath
+		host: 'sytantris.github.io',
+		path: '/http-examples/step2.html'
 	};
+  
+	userInput == undefined ? url = requestOptions : url = userInput;  
 	let dataBuffer = '';
 
-	https.get(requestOptions, function(response) {
+	https.get(url, function(response) {
 		response.setEncoding('utf8');
 		response.on('data', function(data) {
 			dataBuffer += data;
